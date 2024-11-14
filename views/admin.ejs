@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View All Service Requests</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Add some simple styles for the table and layout */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 30px;
+        }
+
+        .back-button:hover {
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>All Service Requests</h2>
+
+        <% if (serviceRequests.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Clothes</th>
+                        <th>Pressing</th>
+                        <th>Laundry</th>
+                        <th>Dry Cleaning</th>
+                        <th>Alterations</th>
+                        <th>Additional Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% serviceRequests.forEach(request => { %>
+                        <tr>
+                            <td><%= request.name %></td>
+                            <td><%= request.email %></td>
+                            <td><%= request.clothes %></td>
+                            <td><%= request.pressing %></td>
+                            <td><%= request.laundry %></td>
+                            <td><%= request.dryCleaning %></td>
+                            <td><%= request.alterations %></td>
+                            <td><%= request.additionalNotes %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No service requests found.</p>
+        <% } %>
+
+        <a href="/api/list" class="back-button">Go Back to Home</a>
+    </div>
+
+</body>
+</html>

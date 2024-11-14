@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base reset for margin, padding and box sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header and navigation styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff6347;
+        }
+
+        /* Main section styles */
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        table td:first-child {
+            font-weight: 600;
+            color: #333;
+        }
+
+        table td:last-child {
+            color: #666;
+        }
+
+        /* No data available message */
+        p {
+            font-size: 1.2rem;
+            color: #ff6347;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Button style */
+        .button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff6347;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            section {
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">QuickClean</div>
+            <ul class="nav-links">
+                <li><a href="/api/list">Home</a></li>
+                <li><a href="/admin">View All Requests</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Service Request Submitted</h2>
+
+        <% if (submittedData) { %>
+            <h3>Here are the details of your Customer:</h3>
+            <table>
+                <tr><td><strong>Name:</strong></td><td><%= submittedData.name %></td></tr>
+                <tr><td><strong>Email:</strong></td><td><%= submittedData.email %></td></tr>
+                <tr><td><strong>Clothes:</strong></td><td><%= submittedData.clothes %></td></tr>
+                <tr><td><strong>Pressing:</strong></td><td><%= submittedData.pressing %></td></tr>
+                <tr><td><strong>Laundry:</strong></td><td><%= submittedData.laundry %></td></tr>
+                <tr><td><strong>Dry Cleaning:</strong></td><td><%= submittedData.dryCleaning %></td></tr>
+                <tr><td><strong>Alterations:</strong></td><td><%= submittedData.alterations %></td></tr>
+                <tr><td><strong>Additional Notes:</strong></td><td><%= submittedData.additionalNotes %></td></tr>
+            </table>
+        <% } else { %>
+            <p>No data available. Please submit a service request first.</p>
+        <% } %>
+
+        <!-- Example of a button linking to another page -->
+        <a href="/api/list" class="button">Go Back Home</a>
+    </section>
+
+</body>
+</html>

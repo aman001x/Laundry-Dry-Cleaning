@@ -1,0 +1,173 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f9fc;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header .nav-links li {
+    margin-left: 20px;
+}
+
+header .nav-links li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header .nav-links li a:hover {
+    color: #0066cc;
+}
+
+/* Service Request Section */
+#serviceRequest {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#serviceRequest h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus and Hover Effects */
+form input:focus, form textarea:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+form input, form textarea {
+    width: 100%;
+}
+
+form button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #005bb5;
+}
+
+/* Checkbox and Label Styling */
+form div {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+form label {
+    font-size: 1rem;
+    color: #555;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Additional Notes (Textarea) */
+#additionalNotes {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Response Message Styling */
+.response-message {
+    background-color: #e0ffe0;
+    border: 1px solid #b3ffb3;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+    color: #4caf50;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header .nav-links {
+        display: block;
+        text-align: center;
+    }
+
+    header .nav-links li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    #serviceRequest {
+        padding: 20px;
+    }
+
+    #serviceRequest h2 {
+        font-size: 1.8rem;
+    }
+}

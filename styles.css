@@ -1,0 +1,343 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #00B8D4;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+nav .nav-links li {
+    margin: 0 1rem;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav .nav-links li a:hover {
+    color: #FFEB3B;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/laundry-service-background-flat-design_98292-23487.avif');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #FF5722;
+}
+
+/* Services Section */
+.services {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00B8D4;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    margin: 1rem;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #FF6F61;
+}
+
+/* Pricing Section */
+.pricing {
+    background-color: #FFF3E0;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00B8D4;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: #fff;
+    padding: 2rem;
+    margin: 1rem;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #FF6F61;
+}
+
+.pricing-card p {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #22bad5eb;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form input,
+.contact form textarea {
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.contact form button {
+    background-color: #FF6F61;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact form button:hover {
+    background-color: #FF5722;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    .service-cards, .pricing-cards {
+        flex-direction: column;
+    }
+
+    .service-card, .pricing-card {
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #00B8D4;
+    padding: 1rem;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+nav .nav-links li {
+    margin: 0 1rem;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav .nav-links li a:hover {
+    color: #FFEB3B;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Mobile View: Hide nav links and show hamburger */
+@media screen and (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #00B8D4;
+        width: 100%;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .nav-links li {
+        margin: 1rem 0;
+    }
+
+    /* Show hamburger icon on mobile */
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Active Menu State (when toggled) */
+.nav-links.active {
+    display: flex;
+}
+
+/* Adjust link styles for mobile */
+.nav-links li a {
+    font-size: 1.2rem;
+}

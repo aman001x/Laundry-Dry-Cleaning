@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickClean Laundry Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f9fc;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 20px;
+}
+
+/* Header (Navigation Bar) */
+header {
+    background-color: #00aaff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #0077cc;
+}
+
+/* Service Request Form Section */
+#serviceRequest {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+#serviceRequest h2 {
+    text-align: center;
+    color: #00aaff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#serviceRequest form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#serviceRequest input,
+#serviceRequest textarea,
+#serviceRequest button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    transition: background-color 0.3s ease;
+}
+
+#serviceRequest input:focus,
+#serviceRequest textarea:focus {
+    background-color: #e6f7ff;
+    border-color: #00aaff;
+    outline: none;
+}
+
+#serviceRequest button {
+    background-color: #00aaff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#serviceRequest button:hover {
+    background-color: #0077cc;
+}
+
+/* Checkbox Section */
+#serviceRequest h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+#serviceRequest div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#serviceRequest label {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Additional Notes Section */
+#serviceRequest textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    #serviceRequest {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #serviceRequest h2 {
+        font-size: 24px;
+    }
+}
+/* General styles for the checkboxes and labels */
+.service-option {
+    display: flex;
+    align-items: center; /* Align checkboxes and labels */
+    margin: 10px 0; /* Add some space between each checkbox */
+}
+
+.service-option input {
+    margin-right: 15px; /* Space between checkbox and label */
+    cursor: pointer; /* Change cursor to pointer when hovering over checkbox */
+}
+
+.service-option label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.service-option input:checked + label {
+    color: #00aaff; /* Change label color when checkbox is checked */
+}
+
+.service-option label:hover {
+    color: #0077cc; /* Hover effect for label */
+}
+
+/* Add a more colorful style to the checkboxes */
+.service-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid #00aaff;
+    background-color: white;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Custom color for the checked state of the checkbox */
+.service-option input[type="checkbox"]:checked {
+    background-color: #00aaff;
+    border-color: #00aaff;
+}
+
+/* Add a border effect when checkbox is focused */
+.service-option input[type="checkbox"]:focus {
+    outline: none;
+    border-color: #0077cc;
+}
+
+/* General styles for the counter input and labels */
+.service-option {
+    display: flex;
+    align-items: center; /* Align number input and labels */
+    margin: 15px 0; /* Add some space between each input field */
+    justify-content: space-between;
+}
+
+.service-option label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    width: 200px; /* Fixed width for the labels to align inputs */
+}
+
+.service-option input {
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f4f9fc;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Focused input styling */
+.service-option input:focus {
+    background-color: #e6f7ff;
+    border-color: #00aaff;
+    outline: none;
+}
+
+/* Hover effect for the label */
+.service-option label:hover {
+    color: #0077cc; /* Color change on label hover */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .service-option {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-option label {
+        width: auto; /* Remove fixed width for mobile view */
+        margin-bottom: 5px;
+    }
+}
+/* Basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Mobile menu visibility and behavior */
+@media screen and (max-width: 768px) {
+    /* Hide the nav-links on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Show the hamburger menu */
+    .menu-toggle {
+        display: block;
+       
+    }
+
+    /* When the nav-links are toggled */
+    .nav-links.active {
+        display: flex;
+    }
+}
+/* General Styles for Header */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style the menu toggle (Hamburger Button) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Initially hide nav links on mobile */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* Mobile View: Hide the nav links and show the hamburger button */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide menu on mobile */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        flex-direction: column;
+        padding: 10px 20px;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active class is added */
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">QuickClean</div>
+    
+            <!-- Hamburger Button for Mobile View -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"><i class="fa-solid fa-list fa-2xl" style="color: white;"></i></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/api/list">Home</a></li>
+                <li><a href="/contact-list">Admin Dashboard</a></li>
+                <li><a href="/admin">View All Requests</a></li>
+                <li><a href="/api/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Service Request Form -->
+    <section id="serviceRequest" class="service-request">
+        <h2>Request Our Services</h2>
+        
+        
+        <form id="serviceForm" method="POST" action="/api/author">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <h3>Select Services:</h3>
+            <div class="service-option">
+                <label for="clothes">Clothes</label>
+                <input type="number" id="clothes" name="clothes" min="0" value="0" step="1">
+            </div>
+            <div class="service-option">
+                <label for="pressing">Pressing</label>
+                <input type="number" id="pressing" name="pressing" min="0" value="0" step="1">
+            </div>
+            <div class="service-option">
+                <label for="laundry">Laundry</label>
+                <input type="number" id="laundry" name="laundry" min="0" value="0" step="1">
+            </div>
+            <div class="service-option">
+                <label for="dryCleaning">Dry Cleaning</label>
+                <input type="number" id="dryCleaning" name="dryCleaning" min="0" value="0" step="1">
+            </div>
+            <div class="service-option">
+                <label for="alterations">Alterations</label>
+                <input type="number" id="alterations" name="alterations" min="0" value="0" step="1">
+            </div>
+            
+
+            <textarea id="additionalNotes" name="additionalNotes" placeholder="Additional Notes (Optional)"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+    <script>
+        
+    // Get the menu toggle button and the nav-links container
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    // Add an event listener to toggle the 'active' class on the nav-links when the menu button is clicked
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active'); // This toggles the visibility of the nav links
+    });
+
+
+
+    </script>
+    
+</body>
+</html>
